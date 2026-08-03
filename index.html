@@ -110,6 +110,15 @@ body{
     width:34rem; height:34rem;
     background:var(--rust-glow);
   }
+  @media(max-width:1023px){
+    .hero-glow.top{
+      top:-6rem;
+      left:50%;
+      right:auto;
+      transform:translateX(-50%);
+      width:26rem; height:20rem;
+    }
+  }
   .hero-grid{
     position:relative;
     display:grid;
@@ -157,10 +166,20 @@ body{
   }
   .cta-row{
     display:flex;
-    flex-wrap:wrap;
+    flex-direction:column;
     gap:.85rem;
     margin-top:1.8rem;
   }
+  .cta-row .btn{
+    width:100%;
+    justify-content:center;
+  }
+  @media(min-width:480px){
+    .cta-row{ flex-direction:row; flex-wrap:wrap; }
+    .cta-row .btn{ width:auto; }
+  }
+  .hero-media{ order:-1; }
+  @media(min-width:1024px){ .hero-media{ order:0; } }
   .btn{
     display:inline-flex;
     align-items:center;
@@ -469,6 +488,9 @@ body{
     font-size:1rem;
     line-height:1.75;
     color:rgba(243,233,220,.85);
+  }
+  @media(max-width:639px){
+    .how-footer{ display:none; }
   }
 
 /* ===== PARA QUEM E ===== */
